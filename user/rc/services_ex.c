@@ -397,7 +397,7 @@ start_dhcpd(void)
 	}
 
 	fprintf(fp, "resolv-file=/tmp/resolv.conf\n");
-	fprintf(fp, "addn-hosts=/tmp/hosts.conf\n");
+	fprintf(fp, "addn-hosts=/tmp/hosts\n");
 	fprintf(fp, "interface=br0\n");
 
         if (!nvram_match("lan_domain", ""))
@@ -427,7 +427,7 @@ start_dhcpd(void)
 
 	fclose(fp);
 
-	doSystem("/usr/sbin/dnsmasq -C /tmp/dnsmasq.conf");
+	doSystem("/usr/sbin/dnsmasq -u admin -C /tmp/dnsmasq.conf");
 
 	return 0;
 }
