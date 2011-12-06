@@ -428,7 +428,7 @@ start_dhcpd(void)
 
 	chpass(nvram_safe_get("http_username"), nvram_safe_get("http_passwd"));
 
-	doSystem("/usr/sbin/dnsmasq -u admin -C /tmp/dnsmasq.conf");
+	doSystem("/usr/sbin/dnsmasq -u %s -g %s -C /tmp/dnsmasq.conf", nvram_safe_get("http_username"), nvram_safe_get("http_username"));
 
 	return 0;
 }
