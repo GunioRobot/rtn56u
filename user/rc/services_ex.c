@@ -426,6 +426,8 @@ start_dhcpd(void)
 
 	fclose(fp);
 
+	chpass(nvram_safe_get("http_username"), nvram_safe_get("http_passwd"));
+
 	doSystem("/usr/sbin/dnsmasq -u admin -C /tmp/dnsmasq.conf");
 
 	return 0;
