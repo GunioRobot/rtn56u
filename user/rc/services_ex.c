@@ -403,8 +403,7 @@ start_dhcpd(void)
         if (!nvram_match("lan_domain", ""))
 	  fprintf(fp, "domain=%s\n", nvram_safe_get("lan_domain"));
 
-	fprintf(fp, "start %s\n", nvram_safe_get("dhcp_start"));
-	fprintf(fp, "end %s\n", nvram_safe_get("dhcp_end"));
+	fprintf(fp, "dhcp-range=%s,%s,%s\n", nvram_safe_get("dhcp_start"), nvram_safe_get("dhcp_end"), nvram_safe_get("dhcp_lease"));
 	
 	if (!nvram_match("dhcp_gateway_x", ""))
 		fprintf(fp, "dhcp-option=3,%s\n", nvram_safe_get("dhcp_gateway_x"));	
