@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html xmlns:v>
 <head>
@@ -639,9 +639,6 @@ function ISPSelection(isp){
 								<td align="left">
 									<select id="wan_proto_menu" class="input" name="wan_proto" onchange="change_wan_type(this.value);fixed_change_wan_type(this.value);">
 										<option value="dhcp" <% nvram_match_x("Layer3Forwarding", "wan_proto", "dhcp", "selected"); %>><#BOP_ctype_title1#></option>
-										<option value="pppoe" <% nvram_match_x("Layer3Forwarding", "wan_proto", "pppoe", "selected"); %>>PPPoE</option>
-										<option value="pptp" <% nvram_match_x("Layer3Forwarding", "wan_proto", "pptp", "selected"); %>>PPTP</option>
-										<option value="l2tp" <% nvram_match_x("Layer3Forwarding", "wan_proto", "l2tp", "selected"); %>>L2TP</option>
 										<option value="static" <% nvram_match_x("Layer3Forwarding", "wan_proto", "static", "selected"); %>><#BOP_ctype_title5#></option>
 									</select>
 									<span style="font-weight:normal;" id="wan_proto_hint"><span style="color:#000;font-size:14px;">3G/3.5G</span><input class="button" onclick="hsdpa_disable();" type="button" value="<#Disconnected#>"/></span>
@@ -662,11 +659,6 @@ function ISPSelection(isp){
 								</td>
 							</tr>											
 							<tr>
-  	            <th><a class="hintstyle" href="javascript:void(0);" onClick="openHint(7,11);"><#PPPConnection_x_PPPoERelay_itemname#></a></th>
-    	          <td style="font-weight:normal;" align="left">
-      	        	<input type="radio" value="1" name="wan_pppoe_relay_x" class="input" onclick="return change_common_radio(this, 'PPPConnection', 'wan_pppoe_relay_x', '1')" <% nvram_match_x("PPPConnection","wan_pppoe_relay_x", "1", "checked"); %> /><#checkbox_Yes#>
-        	        <input type="radio" value="0" name="wan_pppoe_relay_x" class="input" onclick="return change_common_radio(this, 'PPPConnection', 'wan_pppoe_relay_x', '0')" <% nvram_match_x("PPPConnection","wan_pppoe_relay_x", "0", "checked"); %> /><#checkbox_No#>
-          	    </td>
             	</tr>
 
 							<!--tr>
