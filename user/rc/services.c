@@ -167,7 +167,7 @@ chpass(char *user, char *pass)
 int 
 start_sshd()
 {
-	if (!nvram_match("sshd", "1"))
+	if (!nvram_match("telnetd", "1"))
 		return 0;
 
 	if (pids("dropbear"))

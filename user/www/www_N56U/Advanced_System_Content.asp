@@ -290,8 +290,8 @@ function corrected_timezone(){
 	<tr>
 	  <th><#Adm_System_sshd#></th>
 	  <td>
-	    <input type="radio" name="sshd" class="input" value="1" <% nvram_match_x("LANHostConfig", "sshd", "1", "checked"); %>><#checkbox_Yes#>
-	    <input type="radio" name="sshd" class="input" value="0" <% nvram_match_x("LANHostConfig", "sshd", "0", "checked"); %>><#checkbox_No#>
+	    <input type="radio" name="sshd" class="input" value="1" <% nvram_match_x("LANHostConfig", "telnetd", "1", "checked"); %>><#checkbox_Yes#>
+	    <input type="radio" name="sshd" class="input" value="0" <% nvram_match_x("LANHostConfig", "telnetd", "0", "checked"); %>><#checkbox_No#>
 	  </td>
 	</tr>
 
