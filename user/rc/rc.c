@@ -70,7 +70,7 @@ static void rc_signal(int sig);
 
 int remove_usb_mass(char *product);
 void usbtpt(int argc, char *argv[]);
-int start_telnetd();
+int start_sshd();
 void print_sw_mode();
 
 extern struct nvram_tuple router_defaults[];
@@ -2240,9 +2240,9 @@ main(int argc, char **argv)
 		pids_main(argv[1]);
 		return 0;
 	}
-	else if (!strcmp(base, "start_telnetd"))
+	else if (!strcmp(base, "start_sshd"))
 	{
-		start_telnetd();
+		start_sshd();
 		return 0;
 	}
 	else if (!strcmp(base, "start_wanduck"))
@@ -2260,9 +2260,9 @@ main(int argc, char **argv)
 		restart_wanduck();
 		return 0;
 	}
-	else if (!strcmp(base, "run_telnetd"))
+	else if (!strcmp(base, "run_sshd"))
 	{
-		run_telnetd();
+		run_sshd();
 		return 0;
 	}
 	else if (!strcmp(base, "start_ots"))

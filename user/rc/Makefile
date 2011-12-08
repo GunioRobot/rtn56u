@@ -145,7 +145,7 @@ romfs:
 	cd $(INSTALLDIR)/sbin && ln -sf rc ejusb1
 	cd $(INSTALLDIR)/sbin && ln -sf rc ejusb2
 	cd $(INSTALLDIR)/sbin && ln -sf rc usbtpt
-	cd $(INSTALLDIR)/sbin && ln -sf rc start_telnetd
+	cd $(INSTALLDIR)/sbin && ln -sf rc start_sshd
 	cd $(INSTALLDIR)/sbin && ln -sf rc start_wanduck
 	cd $(INSTALLDIR)/sbin && ln -sf rc stop_wanduck
 	cd $(INSTALLDIR)/sbin && ln -sf rc restart_wanduck
@@ -209,7 +209,7 @@ romfs:
 	cd $(INSTALLDIR)/sbin && ln -sf rc phyState
 	cd $(INSTALLDIR)/sbin && ln -sf rc ATE_Get_WanLanStatus
 	cd $(INSTALLDIR)/sbin && ln -sf rc ATE_Get_FwReadyStatus
-	cd $(INSTALLDIR)/sbin && ln -sf rc run_telnetd
+	cd $(INSTALLDIR)/sbin && ln -sf rc run_sshd
 	cd $(INSTALLDIR)/sbin && ln -sf rc umount_dev_all
 	cd $(INSTALLDIR)/sbin && ln -sf rc cpu
 

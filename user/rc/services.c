@@ -165,39 +165,35 @@ chpass(char *user, char *pass)
 }
 
 int 
-start_telnetd()
+start_sshd()
 {
-	char *telnetd_argv[] = {"telnetd", NULL};
-
-	if (!nvram_match("telnetd", "1"))
+	if (!nvram_match("sshd", "1"))
 		return 0;
 
-	if (pids("telnetd"))
-		system("killall telnetd");
+	if (pids("dropbear"))
+		system("killall dropbear");
 
 	chpass(nvram_safe_get("http_username"), nvram_safe_get("http_passwd"));	// vsftpd also needs
 
-	return system("telnetd");
+	return system("dropbear -r /etc_ro/dropbear/dropbear_rsa_host_key");
 }
 
 void 
-stop_telnetd()
+stop_sshd()
 {
-	if (pids("telnetd"))
-		system("killall telnetd");
+	if (pids("dropbear"))
+		system("killall dropbear");
 }
 
 int 
-run_telnetd()
+run_sshd()
 {
-	char *telnetd_argv[] = {"telnetd", NULL};
-
-	if (pids("telnetd"))
-		system("killall telnetd");
+	if (pids("dropbear"))
+		system("killall dropbear");
 
 	chpass(nvram_safe_get("http_username"), nvram_safe_get("http_passwd"));	// vsftpd also needs
 
-	return system("telnetd");
+	return system("dropbear -r /etc_ro/dropbear/dropbear_rsa_host_key");
 }
 
 int
@@ -460,7 +456,7 @@ start_services(void)
 	else
 		doSystem("hostname %s", nvram_safe_get("productid"));
 
-        start_telnetd();
+        start_sshd();
 	start_klogd();
 	start_dns();
 	start_8021x();
