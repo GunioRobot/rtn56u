@@ -2,7 +2,6 @@ LIB_HOME = $(shell pwd)/source
 
 all:	keys_test config_test
 	$(MAKE) -C source PROGRAMS="dropbear"
-	$(MAKE) -C source PROGRAMS="dropbear" install
 
 keys_test:
 	( if [ -f ./keys_done ]; then \
@@ -28,6 +27,8 @@ configure:
 	./configure \
 		--host=mipsel-linux \
 		--prefix=$(LIB_HOME)/../install \
+		--disable-lastlog \
+		--disable-wtmp \
 	)
 
 clean:
@@ -38,8 +39,8 @@ clean:
 
 romfs:
 #	echo "do nothing"
-	cp install/sbin/dropbear .
+	cp source/dropbear .
 	$(STRIP) dropbear
 	$(ROMFSINST) /sbin/dropbear
-	$(ROMFSINST) -d /etc/dropbear/dropbear_rsa_host_key
+	$(ROMFSINST) -d /etc_ro/dropbear/dropbear_rsa_host_key
 
