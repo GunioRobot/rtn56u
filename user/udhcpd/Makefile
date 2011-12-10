@@ -9,7 +9,7 @@ INSTALLDIR = $(ROOTDIR)/romfs
 
 # Uncomment this to get a shared binary. Call as udhcpd for the server,
 # and udhcpc for the client
-COMBINED_BINARY=1
+#COMBINED_BINARY=1
 
 # Uncomment this for extra output and to compile with debugging symbols
 # DEBUG=1
@@ -114,9 +114,9 @@ endif
 	$(INSTALL) udhcpc.8 udhcpd.8 $(USRSHAREDIR)/man/man8
 
 romfs: all
-	$(STRIP) udhcpd
-	$(ROMFSINST) /usr/sbin/udhcpd 
-	cd $(INSTALLDIR)/usr/sbin && ln -sf udhcpd udhcpc
+	$(STRIP) udhcpc
+	$(ROMFSINST) /usr/sbin/udhcpc 
+#	cd $(INSTALLDIR)/usr/sbin && ln -sf udhcpd udhcpc
 
 clean:
 	-rm -f udhcpd udhcpc dumpleases *.o core
