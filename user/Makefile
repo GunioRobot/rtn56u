@@ -172,6 +172,7 @@ dir_y						+= e2fsprogs
 dir_y						+= miniupnpd
 dir_y						+= dosfstools-3.0.10
 dir_y						+= dnsmasq-2.59
+dir_y						+= dropbear
 #dir_y						+= cutter-1.03
 #dir_y						+= epi_ttcp
 dir_y						+= ffmpeg-0.6.2

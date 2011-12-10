@@ -43,7 +43,7 @@ OP_WirelessClient=Client sans fil
 OP_WirelessSignal=Signal sans fil existant
 [untranslate]
 IPConnection_VSList_ftpport=FTP Server Port:
-Adm_System_telnetd=Enable Telnet Server?
+Adm_System_sshd=Enable SSH Server?
 wps_start_btn=Commencer
 USB_Application_account_alert=Le nom d'utilisateur ne peut pas être "root", "Root", "ROOT", "admin", "Admin", "ADMIN", "family", Family" ou "FAMILY". Veuillez modifier votre nom d'utilisateur.
 BasicConfig_USBStorageWhiteist_itemdesc=Ce champ autorise la saisie d'un caractère hexadécimal compris entre 1 et FFFF. Entrez 0 (zéro) pour désactiver cette fonctionnalité.

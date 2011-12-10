@@ -43,7 +43,7 @@ OP_WirelessClient=Wireless Client
 OP_WirelessSignal=Existing wireless signal
 [untranslate]
 IPConnection_VSList_ftpport=FTP Server Port:
-Adm_System_telnetd=Enable Telnet Server?
+Adm_System_sshd=Enable SSH Server?
 wps_start_btn=Start
 USB_Application_account_alert=User's account cannot be'root', 'Root', 'ROOT', 'admin', 'Admin', 'ADMIN', 'family', 'Family', 'FAMILY' ! Please enter a valid account.
 BasicConfig_USBStorageWhiteist_itemdesc=The range for this field is hex 1 to FFFF. Enter 0 (zero) to disable this feature.

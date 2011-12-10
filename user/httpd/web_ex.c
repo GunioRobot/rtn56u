@@ -1477,10 +1477,10 @@ static int validate_asp_apply(webs_t wp, int sid, int groupFlag) {
 				nvram_set_x(GetServiceId(sid), v->name, value);
 				
 // 2008.03 James. {
-				if ((/*!strcmp(GetServiceId(sid), "General") && */!strcmp(v->name, "http_passwd")) || !strcmp(v->name, "telnetd"))
+				if ((/*!strcmp(GetServiceId(sid), "General") && */!strcmp(v->name, "http_passwd")) || !strcmp(v->name, "sshd"))
 				{
 					change_passwd = 1;
-					eval("/sbin/start_telnetd");
+					eval("/sbin/start_sshd");
 				}
 // 2008.03 James. }
 				
