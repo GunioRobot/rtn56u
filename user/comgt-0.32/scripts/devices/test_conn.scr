@@ -30,8 +30,10 @@ print "CONNECTED\n"
 exit 0
 :error
 print "CONNECT ERROR\n"
+send "ATH^m"
 exit 1
 :timeerror
 print "CONNECT TIMEOUT\n"
+send "ATH^m"
 exit 1
 
